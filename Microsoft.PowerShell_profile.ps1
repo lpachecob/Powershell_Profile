@@ -120,7 +120,7 @@ function gStash{
         [string] $text
     )
 
-    switch ($flag){
+    switch ($funcion){
         apply { git stash apply $text}
         drop { git stash drop $text}
         pop {git stash pop $text}
