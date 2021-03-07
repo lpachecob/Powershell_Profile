@@ -1,3 +1,3 @@
-#Funciones de mi powershell
+# Funciones de mi powershell
 - Ngrok
 - Git
