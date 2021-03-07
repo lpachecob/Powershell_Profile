@@ -30,11 +30,28 @@ function gPush{
         [Parameter()]
         [string]$flag,
         [Parameter()]
-        [string]$name 
+        [string]$remote,
+        [Parameter()]
+        [string]$brunch
     )
 
     switch ($flag) {
-        DEFAULT { git push $flag}
+        DEFAULT { git push $remote $brunch}
+    }
+}
+
+function gPull{
+    param(
+        [Parameter()]
+        [string]$flag,
+        [Parameter()]
+        [string]$remote,
+        [Parameter()]
+        [string]$brunch
+    )
+
+    switch ($flag) {
+        DEFAULT { git pull --rebase $remote $brunch}
     }
 }
 
@@ -69,18 +86,6 @@ function gCheck{
 
 }
 
-function gPull{
-    param(
-        [Parameter()]
-        [string]$flag,
-        [Parameter()]
-        [string]$name
-    )
-
-    switch ($flag) {
-        DEFAULT { git pull}
-    }
-}
 
 function gMerge{
     param(
