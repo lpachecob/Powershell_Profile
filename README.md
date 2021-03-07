@@ -1,1 +1,3 @@
-# Powershell_Profile
+#Funciones de mi powershell
+- Ngrok
+- Git
