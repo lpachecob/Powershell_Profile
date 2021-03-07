@@ -34,7 +34,7 @@ function gPush{
     )
 
     switch ($flag) {
-        DEFAULT { git origin $flag}
+        DEFAULT { git push $flag}
     }
 }
 
@@ -80,4 +80,54 @@ function gPull{
     switch ($flag) {
         DEFAULT { git pull}
     }
+}
+
+function gMerge{
+    param(
+        [Parameter()]
+        [string]$flag,
+        [Parameter()]
+        [string]$name
+    )
+
+    switch ($flag) {
+        DEFAULT { git merge $flag}
+    }
+}
+
+function gTag{
+    param(
+        [Parameter()]
+        [string] $flag,
+        [Parameter()]
+        [string] $nameTag,
+        [Parameter()]
+        [string] $commitId
+    )
+
+    switch ($flag){
+        a {git tag -a $nameTag $commitId}
+        DEFAULT {git tag $nameTag $commitId}
+    }
+
+}
+
+function gStash{
+    param(
+        [Parameter()]
+        [string] $funcion,
+        [Parameter()]
+        [string] $text
+    )
+
+    switch ($flag){
+        apply { git stash apply $text}
+        drop { git stash drop $text}
+        pop {git stash pop $text}
+        list { git stash list $text}
+        save { git stash save $text }
+        show { git stash show stash@\{$text\}}
+        DEFAULT {git stash $text}
+    }
+
 }
