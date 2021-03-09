@@ -131,7 +131,6 @@ function gStash{
         pop {git stash pop $text}
         list { git stash list $text}
         save { git stash save $text }
-        show { git stash show stash@\{$text\}}
         DEFAULT {git stash $text}
     }
 
